@@ -1,0 +1,21 @@
+mixin section-catalog(data)
+    div.bk-section.bk-section-catalog(data-ng-controller='CatalogCtrl' data-ng-init='init()')&attributes(attributes)
+        div.bk-container.bk-container--column
+            +unit-title--h2(data.title)&attributes({class:['bk-section-catalog__title']})
+            div.bk-section-catalog__text
+                != data.text
+            div.bk-section-catalog__list
+                div.bk-section-catalog__item(data-ng-repeat='item in bikes')
+                    div.bk-section-catalog__item-link(data-ng-click='about($event, item)')
+                        div.bk-section-catalog__item-header
+                            div.bk-section-catalog__item-title(data-ng-bind='item.name')
+                            div.bk-section-catalog__item-price
+                                | {{item.price | bkCurrency}}
+                        div.bk-section-catalog__item-description(data-ng-bind='item.description')
+                        picture.bk-section-catalog__item-photo
+                            img.bk-section-catalog__item-image(src='{{item.image}}' alt='{{item.name}}')
+                    div.bk-section-catalog__item-action
+                        div.bk-section-catalog__item-action-btn(data-ng-click='config(item.id)') Касмомизировать
+                        div.bk-section-catalog__item-action-btn(data-ng-click='order($event)') Заказать
+            div.bk-section-catalog__more
+                md-button.bk-section-catalog__more-btn.md-raised.md-accent(data-ng-click='more()') Еще немного

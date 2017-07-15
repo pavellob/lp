@@ -1,0 +1,33 @@
+extends ../../layouts/angular.jade
+
+block content
+    div.bk-unit-feedback__row
+        md-input-container.bk-unit-feedback__field
+            label Модель
+            md-select(ng-model="formData.bike")
+                md-option(ng-repeat="bike in bikes" value="{{bike.id}}" ng-bind="bike.name")
+
+        div.bk-unit-feedback__field.bk-unit-feedback__field--align_center
+            a.bk-unit-feedback__action-link(href="#")
+                | Кастомизировать
+
+    div.bk-dialog__text
+        | Укажите ваши контактные данные и мы свяжемся с вами.
+    
+    div.bk-unit-feedback__row
+        md-input-container.bk-unit-feedback__field
+            label Имя
+            input(type='text', name='Name', ng-model='formData.user_name', required, ng-minlength='2', ng-maxlength='255', pattern='[A-Za-zА-Яа-яЁё\\s\\-]{1,}', autocomplete='off')
+
+        md-input-container.bk-unit-feedback__field
+            label Телефон
+            input(type='tel', name='Phone', ng-model='formData.user_phone', required, autocomplete='off')
+    
+    div.bk-unit-feedback__row
+        md-input-container.bk-unit-feedback__field
+            label E-mail
+            input(type='email', name='Email', ng-model='formData.user_email', required, autocomplete='off')
+
+    div.bk-unit-feedback__action
+        md-button.bk-unit-feedback__action-btn.md-raised.md-accent(type="submit")
+            | {{feedback.callToAction}}

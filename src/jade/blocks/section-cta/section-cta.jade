@@ -1,0 +1,11 @@
+mixin section-cta(data)
+    div.bk-section.bk-section-cta(data-ng-controller='#{data.ctrl}', data-ng-init='init()')&attributes(attributes)
+        div.bk-container.bk-container--column
+            div.bk-section-cta__inner(style='background-image:url(#{data.image});')
+                div.bk-section-cta__info
+                    div.bk-section-cta__title
+                        != data.title
+                        span.bk-section-cta__title-icon
+                    div.bk-section-cta__action
+                        md-button.bk-section-catalog__action-btn.md-raised.md-accent(data-ng-click='action($event)')
+                            != data.cta

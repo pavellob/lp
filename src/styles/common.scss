@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+a {
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.md-button,
+a.md-button {
+    padding: 16px 40px;
+    border-radius: 52px;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    overflow: hidden;
+    vertical-align: text-top;
+    
+    &.md-accent.md-raised {
+        color: #fff;
+    }
+}
+
+[ng-cloak],
+[data-ng-cloak] {
+    display: none;
+}
+
+.bk-show-sm {
+    display: none;
+
+    @media only screen and (min-width : $layout-breakpoint-sm) {
+        display: block;
+
+        &--inline {
+            display: inline;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.bk-section-feature {
+    display: flex;
+    flex-direction: row;
+
+    &__photo {
+        display: none;
+
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            display: block;
+            flex-shrink: 1;
+            flex-grow: 0;
+            width: 50%;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 2;
+                left: 24px;
+                right: 24px;
+                top: 24px;
+                bottom: 24px;
+                border: 2px solid rgba(255, 255, 255, 0.69);
+            }
+        }
+    }
+
+    &__image {
+        min-width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+
+    &__info {
+        flex-shrink: 1;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            width: 50%;
+            padding: 0 72px;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        margin-top: 32px;
+    }
+}

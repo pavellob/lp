@@ -1,0 +1,14 @@
+extends ../../layouts/angular.jade
+
+block content
+    md-input-container.bk-unit-feedback__field
+        label Имя
+        input(type='text', name='Name', ng-model='formData.user_name', required, ng-minlength='2', ng-maxlength='255', pattern='[A-Za-zА-Яа-яЁё\\s\\-]{1,}', autocomplete='off')
+
+    md-input-container.bk-unit-feedback__field
+        label E-mail или телефон
+        input(type='text', name='Contact', ng-model='formData.user_contact', required, autocomplete='off')
+
+    div.bk-unit-feedback__action
+        md-button.bk-unit-feedback__action-btn.md-raised.md-accent(type="submit")
+            | {{feedback.callToAction}}

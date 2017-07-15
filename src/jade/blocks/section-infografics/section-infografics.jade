@@ -1,0 +1,19 @@
+mixin section-infografics(data)
+    div.bk-section.bk-section-infografics(bk-infografics)&attributes(attributes)
+        div.bk-container.bk-container--column
+            +unit-title--h2(data.title)&attributes({class:['bk-section-infografics__title']})
+            div.bk-section-infografics__carousel-wrap
+                div.bk-section-infografics__carousel.bk-js-carousel
+                    ul.bk-section-infografics__items(class='bk-section-infografics__items--count_#{data.items.length}')
+                        each item, index in data.items
+                            //- li= index + ': ' + val
+                            li.bk-section-infografics__item
+                                picture.bk-section-infografics__item-photo
+                                    img.bk-section-infografics__item-image&attributes(item.image)
+                                div.bk-section-infografics__item-text
+                                    != item.text
+                div.bk-section-infografics__control.bk-section-infografics__control--prev.bk-js-control-prev
+                    i.material-icons &#xE408;
+                div.bk-section-infografics__control.bk-section-infografics__control--next.bk-js-control-next
+                    i.material-icons &#xE409;
+

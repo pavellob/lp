@@ -1,0 +1,13 @@
+extends ../../layouts/angular.jade
+
+block content
+    md-dialog.bk-dialog.bk-dialog--size_small
+        i.bk-dialog__close.material-icons(data-ng-click="closeDialog()") &#xE5CD;
+        md-dialog-content.bk-dialog__content
+            div.bk-dialog__title(data-ng-bind='title')
+            div.bk-dialog__text(data-ng-bind='text')
+            +unit-feedback({
+                angular: true,
+                type: 'feedbackConfig.type',
+                note: 'feedbackConfig.note'
+            })&attributes({class:['bk-dialog__feedback', 'bk-dialog__feedback--{{feedbackConfig.type}}']})

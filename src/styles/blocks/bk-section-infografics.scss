@@ -1,0 +1,132 @@
+.bk-section-infografics {
+    display: flex;
+    flex-direction: column;
+
+    &__carousel-wrap {
+        margin-top: 64px;
+        position: relative;
+    }
+
+    &__carousel {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__items {
+        width: 20000em;
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        float: left;
+        // height: 500px;
+        width: calc(100vw - 32px);
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        flex-direction: column;
+    }
+    &__items--count_3 &__item {
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            width: calc((100vw - 128px)/3);
+        }
+        @media only screen and (min-width : $layout-breakpoint-md) {
+            width: calc((1280px - 128px)/3);
+        }
+    }
+    &__items--count_4 &__item {
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            width: calc((100vw - 128px)/4);
+        }
+        @media only screen and (min-width : $layout-breakpoint-md) {
+            width: calc((1280px - 128px)/4);
+        }
+    }
+    &--arrows &__item {
+        @media only screen and (min-width : $layout-breakpoint-md) {
+            position: relative;
+            padding-top: 22px;
+            overflow: visible;
+
+            &:not(:last-child)::after {
+                content: '';
+                display: block;
+                width: 236px;
+                height: 44px;
+                position: absolute;
+                top: 0;
+                right: -110px;
+                background-image: url(images/infografics-arrow.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+
+            }
+        }
+    }
+
+    &__item-photo {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item-image {
+        display: block;
+        max-width: 100%;
+        min-width: 138px;
+    }
+
+
+    &__item-text {
+        margin-top: 24px;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    &__control {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 64px;
+        // background-color: #f00;
+        z-index: 10;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        cursor: pointer;
+
+        .material-icons {
+            font-size: 48px;
+            line-height: 1;
+            color: #878787;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: none;
+            outline: none;
+        }
+
+        &--prev {
+            left: 0;
+        }
+
+        &--next {
+            right: 0;
+        }
+
+        &.bk-is-inactive {
+            display: none;
+        }
+
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            display: none;
+        }
+    }
+}

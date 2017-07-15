@@ -1,0 +1,95 @@
+.bk-unit-feedback {
+     md-input-container {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            color: rgba(0,0,0,0.87);
+            padding-left: 0!important;
+        }
+        &.md-input-invalid label {
+            color: rgba(0,0,0,0.87);
+        }
+
+        input,
+        textarea {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .hint {
+            left: 0;
+        }
+
+        [ng-message] {
+            padding-right: 0;
+        }
+    }
+
+    &__field {
+
+        &--align_center {
+            align-self: center;
+        }
+    }
+
+    &__action {
+        margin-top: 16px;
+
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            margin-top: 24px;
+        }
+
+        // // TODO: вынести в общие стили
+        // .md-button {
+        //     padding: 0 20px;
+        //     min-height: 40px;
+        //     margin: 0;
+        //     font-size: 14px;
+        //     font-weight: 400;
+        //     border-radius: 2px;
+        //     width: 100%;
+
+        //     @media only screen and (min-width : $layout-breakpoint-sm) {
+        //         width: auto;
+        //     }
+        // }
+    }
+
+    &__action-btn.md-accent.md-raised {
+        background-color: transparent;
+        border: 2px solid #ff7100;
+        box-shadow: none;
+        color: #ff7100;
+        
+
+        &:hover {
+            color: #fff;
+        }
+
+        &:focus,
+        &:active {
+            outline: none;
+            box-shadow: none;
+            color: #fff;
+            // background-color: transparent!important;
+        }
+    }
+
+    &__action-link {
+        color: #ff7100;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:focus,
+        &:active {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}

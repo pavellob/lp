@@ -1,0 +1,155 @@
+extends ../layouts/base.jade
+
+block content
+    +section-banner({
+        items: [
+            {
+                image: {src: 'images/banner-test.jpg', alt: 'banner test'},
+                title: 'Asd',
+                price: 'qwe',
+                action: {
+                    link: '#',
+                    text: 'Кастомизировать'
+                }
+            },
+            {
+                image: {src: 'images/banner-test.jpg', alt: 'banner test'},
+                title: 'zxc',
+                price: 'fde',
+                action: {
+                    link: '#',
+                    text: 'Заказать'
+                }
+            },
+            {
+                image: {src: 'images/banner-test.jpg', alt: 'banner test'},
+                title: 'tbg',
+                price: 'fvr',
+                action: {
+                    link: '#',
+                    text: 'Заказать'
+                }
+            }
+        ]
+    })&attributes({class: ['bk-section--indent_no']})
+
+    +section-feature({
+        title: 'О нас',
+        text: 'Мы создаем красивые, современные велосипеды для каждого. Мы индивидуально собираем комплектацию под потребности каждого клиента, затем красим велосипед в выбранный заказчиком цвет. Наши велосипеды легкие, быстрые и недорогие. Главное - они отображают индивидуальность своего владельца.',
+        image: {src: 'images/about.jpg', alt: 'о нас'}
+    })&attributes({class: ['bk-section--indent_no', 'bk-section--background_dark-grey']})
+
+    +section-infografics({
+        title: 'Наши преимущества',
+        items: [
+            {
+                image: {src: 'images/infografics-1-1.png', alt: 'индивидуальные'},
+                text: 'Индивидуальный<br>подход'
+            },
+            {
+                image: {src: 'images/infografics-1-2.png', alt: 'легкие'},
+                text: 'Легкие<br>и доступные'
+            },
+            {
+                image: {src: 'images/infografics-1-3.png', alt: 'техобслуживание'},
+                text: '5 лет бесплатного<br>техобслуживания'
+            },
+            {
+                image: {src: 'images/infografics-1-4.png', alt: 'гарантия'},
+                text: '3 года<br>гарантии'
+            }
+        ]
+    })
+
+    +section-catalog({
+        title: 'Наши велосипеды',
+        text: 'Готовые велосипеды прямо сейчас велосипеды кастомной комплектации в течении 3-х дней.'
+    })&attributes({class: ['bk-section--background_light-grey']})
+    +section-cta({
+        title: 'Ничего не подошло?',
+        image: 'images/nothing-has-come.jpg',
+        ctrl: 'CtaNothingHasComeCtrl',
+        cta: 'Создай свой<span class="bk-show-sm bk-show-sm--inline"> велосипед</span>'
+    })&attributes({class: ['bk-section--indent_bottom', 'bk-section--background_light-grey']})
+
+    +section-infografics({
+        title: 'Этапы работы',
+        items: [
+            {
+                image: {src: 'images/infografics-2-1.png', alt: 'формирование комплектации'},
+                text: 'Выясняем потребности заказчика,<br>формируем комплектацию'
+            },
+            {
+                image: {src: 'images/infografics-2-2.png', alt: 'покраска'},
+                text: 'Красим велосипед'
+            },
+            {
+                image: {src: 'images/infografics-2-3.png', alt: 'сборка велосипеда'},
+                text: 'Собираем велосипед<br>и доставляем заказчику'
+            }
+        ]
+    })&attributes({class: ['bk-section-infografics--arrows']})
+
+    +section-reviews({
+        title: 'Наши клиенты',
+        items: [
+            {
+                reviewer: {name: 'Вася, мальчик', photo: 'images/reviewer.png'},
+                image: 'images/review-bike.png',
+                bike: 'Custom bike',
+                text: 'Анализ зарубежного опыта, как принято считать, консолидирует креативный медийный канал. Стиль менеджмента масштабирует социометрический охват аудитории.'
+            },
+            {
+                reviewer: {name: 'Вася 2, мальчик', photo: 'images/reviewer.png'},
+                image: 'images/review-bike.png',
+                bike: 'Custom bike',
+                text: 'Анализ зарубежного опыта, как принято считать, консолидирует креативный медийный канал. Стиль менеджмента масштабирует социометрический охват аудитории.'
+            },
+            {
+                reviewer: {name: 'Вася 3, мальчик', photo: 'images/reviewer.png'},
+                image: 'images/review-bike.png',
+                bike: 'Custom bike',
+                text: 'Анализ зарубежного опыта, как принято считать, консолидирует креативный медийный канал. Стиль менеджмента масштабирует социометрический охват аудитории.'
+            }
+        ]
+    })&attributes({class: ['bk-section--background_light-grey']})
+    +section-cta({
+        title: 'Быстры заказ велосипеда',
+        image: 'images/speed-order.jpg',
+        ctrl: 'CtaSpeedOrderCtrl',
+        cta: 'Заказать'
+    })&attributes({class: ['bk-section--indent_bottom', 'bk-section--background_light-grey']})
+
+    +section-blog-popular({
+        main: {
+            title: 'Есть ли смысл покупать дорогие шоссейные покрышки?',
+            image: 'images/blog-post.jpg',
+            link: '#',
+            author: 'Vasja Ivanov',
+            date: '30.02.3002',
+            text: '<p>Один знакомый обратился ко мне с вопросом — какие покрышки купить для шоссейного велосипеда, сильно удивляясь разбросу цен.</p><p>Ведь на самом деле, две абсолютно одинаковые на вид покрышки могут отличаться в несколько раз по стоимости. Под шоссейной резиной подразумеваем покрышки для шоссеров — спортивных велосипедов, катающих по асфальтовым дорогам.</p>'
+        },
+        posts: [
+            {
+                title: 'Есть ли смысл покупать дорогие шоссейные покрышки?',
+                image: 'images/blog-post.jpg',
+                link: '#'
+            },
+            {
+                title: 'Есть ли смысл покупать дорогие шоссейные покрышки?',
+                image: 'images/blog-post.jpg',
+                link: '#'
+            }
+        ]
+    })
+    +section-cta({
+        title: 'Бесплатный тест-драйв',
+        image: 'images/free-test-drive.jpg',
+        ctrl: 'CtaFreeTestDriveCtrl',
+        cta: 'Записаться'
+    })&attributes({class: ['bk-section--indent_bottom']})
+
+    +section-form({
+        title: 'Остались воросы?',
+        type: 'question'
+    })&attributes({class: ['bk-section--background_light-grey']})

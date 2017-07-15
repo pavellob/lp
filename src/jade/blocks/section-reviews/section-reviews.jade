@@ -1,0 +1,27 @@
+mixin section-reviews(data)
+    div.bk-section.bk-section-reviews(bk-reviews)&attributes(attributes)
+        div.bk-container.bk-container--column
+            +unit-title--h2(data.title)&attributes({class:['bk-section-reviews__title']})
+            div.bk-section-reviews__carousel-wrap
+                div.bk-section-reviews__pagination.bk-js-pagination
+                div.bk-section-reviews__carousel-inner
+                    div.bk-section-reviews__carousel-content
+                        div.bk-section-reviews__carousel.bk-js-carousel
+                            ul.bk-section-reviews__items
+                                each item in data.items
+                                    li.bk-section-reviews__item(data-reviewer-name=item.reviewer.name data-reviewer-photo=item.reviewer.photo)
+                                        div.bk-section-reviews__item-photo
+                                            img.bk-section-reviews__item-image(src=item.image alt=item.bike)
+                                            div.bk-section-reviews__item-bike
+                                                != item.bike
+                                        div.bk-section-reviews__item-review
+                                            div.bk-section-reviews__item-reviewer-photo
+                                                img.bk-section-reviews__item-reviewer-photo-img(src=item.reviewer.photo alt=item.reviewer.name)
+                                            div.bk-section-reviews__item-text
+                                                != item.text
+                                            div.bk-section-reviews__item-reviewer-name
+                                                != item.reviewer.name
+                    div.bk-section-reviews__control.bk-section-reviews__control--prev.bk-js-control-prev
+                        i.material-icons &#xE408;
+                    div.bk-section-reviews__control.bk-section-reviews__control--next.bk-js-control-next
+                        i.material-icons &#xE409;

@@ -1,0 +1,5 @@
+mixin unit-feedback(element)
+    - var ngInit = element.angular ? "init("+element.type+", "+element.note+")":"init('"+element.type+"', '"+element.note+"')";
+
+    form.bk-unit-feedback(name='FeedbackForm', novalidate, data-ng-controller='FeedbackCtrl', data-ng-init=ngInit, data-ng-submit='submit()')&attributes(attributes)
+        div.bk-unit-feedback__inner(data-ng-include="feedback.template")

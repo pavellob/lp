@@ -1,0 +1,48 @@
+include ../blocks/blocks.jade
+include ../includes/includes.jade
+
+doctype html
+html(lang='ru' data-ng-app='bike')
+    head
+        meta(charset='UTF-8')
+        meta(content='IE=edge' http-equiv='X-UA-Compatible')
+        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+        title Bike Landing
+        link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic')
+        link(rel='stylesheet' href='styles/styles.css')
+    body(data-ng-controller='PageCtrl' data-ng-cloak)
+        md-toolbar.bk-toolbar.md-whiteframe-4dp(flex)
+            div.bk-container(flex)
+                div.bk-header
+                    div.bk-header__burger(data-ng-click='toggleMenu()')
+                        i.material-icons &#xE5D2;
+                    div.bk-header__logo
+                        | LOGO
+                    +header-menu({class:'bk-header__menu'})
+                    div.bk-header__spacer
+                    div.bk-header__phone
+                        a(href='tel:8-812-454-7687') 8 (812) 454-76-87
+                    +header-social({class: 'bk-header__social'})
+        md-sidenav.bk-burger.md-sidenav-left.md-whiteframe-8dp(md-component-id='menu')
+            div.bk-burger__logo
+                | LOGO
+            +header-menu({class:'bk-burger__menu'})
+            +header-social({class: 'bk-burger__social'})
+
+        md-content.bk-content
+            block content
+
+        footer.bk-footer
+            div.bk-container
+                +header-menu({class:'bk-footer__menu'})
+                +header-social({class: 'bk-footer__social'})
+                div.bk-footer__phone
+                    a(href='tel:8-812-454-7687') 8 (812) 454-76-87
+                div.bk-footer__copyright
+                    | © Велосипеды, 2016
+
+
+            
+
+        script(async, src='scripts/scripts.js?r=#{new Date().getTime()}')

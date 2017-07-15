@@ -1,0 +1,11 @@
+{
+    "path": {
+        "assets": "assets/",
+        "src": "src/",
+        "dist": "dist/",
+        "tmp": ".tmp/",
+        "bower": "bower_components/"
+    },
+    "port": 7000,
+    "jsonPort": 7001
+}

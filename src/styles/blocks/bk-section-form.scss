@@ -1,0 +1,78 @@
+.bk-section-form {
+    display: flex;
+    flex-direction: column;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (min-width : $layout-breakpoint-md) {
+            flex-direction: row;
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        .bk-unit-title__value {
+            padding: 0;
+            font-size: 32px;
+            line-height: 48px;
+            text-transform: none;
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            text-align: left;
+        }
+        @media only screen and (min-width : $layout-breakpoint-md) {
+            margin-top: 14px;
+        }
+    }
+
+    &__feedback {
+        flex-grow: 1;
+        margin-left: 0;
+
+        @media only screen and (min-width : $layout-breakpoint-md) {
+            margin-left: 48px;
+        }
+
+        .bk-unit-feedback__inner {
+            display: flex;
+            flex-direction: column;
+
+            @media only screen and (min-width : $layout-breakpoint-sm) {
+                flex-direction: row;
+            }
+        }
+
+        .bk-unit-feedback__field {
+            flex-grow: 1;
+
+            @media only screen and (min-width : $layout-breakpoint-sm) {
+                &:not(:first-child) {
+                    margin-left: 48px;
+                }
+            }
+        }
+        
+        .bk-unit-feedback__action {
+            font-size: 16px;
+            margin-top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media only screen and (min-width : $layout-breakpoint-sm) {
+                margin-left: 48px;
+                justify-content: flex-start;
+            }
+        }
+
+        
+    }
+}

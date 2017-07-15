@@ -1,0 +1,11 @@
+{
+  "mail_messages": {
+    "type": "mail_to_fastorder",
+    "note": "Заказать велосипед",
+    "bike": "10",
+    "user_name": "saf",
+    "user_phone": "dsf",
+    "user_email": "sdf@ads",
+    "mail_messageId": "api"
+  }
+}

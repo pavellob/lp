@@ -1,0 +1,20 @@
+mixin section-banner(data)
+    div.bk-section.bk-section-banner(bk-banner)&attributes(attributes)
+        div.bk-section-banner__carousel.bk-js-carousel
+            ul.bk-section-banner__items
+                each item in data.items
+                    li.bk-section-banner__item
+                        img.bk-section-banner__item-image&attributes(item.image)
+                        div.bk-container.bk-container--column.bk-section-banner__item-info
+                            div.bk-section-banner__item-title
+                                !=item.title
+                            div.bk-section-banner__item-price
+                                !=item.price
+                            div.bk-section-banner__item-action
+                                md-button.md-raised.md-accent(data-ng-href="#{item.action.link}" md-no-ink)
+                                    !=item.action.text
+        div.bk-section-banner__pagination.bk-js-pagination
+        div.bk-section-banner__control.bk-section-banner__control--prev.bk-js-control-prev
+            i.material-icons &#xE408;
+        div.bk-section-banner__control.bk-section-banner__control--next.bk-js-control-next
+            i.material-icons &#xE409;

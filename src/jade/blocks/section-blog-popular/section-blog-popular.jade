@@ -1,0 +1,33 @@
+mixin section-blog-popular(data)
+    div.bk-section.bk-section-blog-popular
+        div.bk-container.bk-container--column
+            div.bk-section-blog-popular__inner
+                div.bk-section-blog-popular__main-post
+                    a.bk-section-blog-popular__post-preview.bk-section-blog-popular__post-preview--main(href=data.main.link)
+                        picture.bk-section-blog-popular__post-photo
+                            img.bk-section-blog-popular__post-image(src=data.main.image alt=data.main.title)
+                        div.bk-section-blog-popular__post-title
+                            != data.main.title
+                    div.bk-section-blog-popular__post-params
+                        div.bk-section-blog-popular__post-param
+                            i.bk-section-blog-popular__post-param-icon.material-icons &#xE7FD;
+                            div.bk-section-blog-popular__post-param-value 
+                                != data.main.author
+                        div.bk-section-blog-popular__post-param
+                            i.bk-section-blog-popular__post-param-icon.material-icons &#xE192;
+                            div.bk-section-blog-popular__post-param-value
+                                != data.main.date
+                    div.bk-section-blog-popular__post-text
+                        != data.main.text
+                    div.bk-section-blog-popular__post-action
+                        md-button.bk-section-blog-popular__post-read.md-raised.md-accent(data-ng-href="#{data.main.link}" md-no-ink) Читать дальше
+                        md-button.bk-section-blog-popular__post-all.md-raised.md-accent(data-ng-href="#" md-no-ink) Все посты
+                div.bk-section-blog-popular__posts
+                    each post, index in data.posts
+                        a.bk-section-blog-popular__post-preview(href=post.link)
+                            picture.bk-section-blog-popular__post-photo
+                                img.bk-section-blog-popular__post-image(src=post.image alt=post.title)
+                            div.bk-section-blog-popular__post-title
+                                != post.title
+            div.bk-section-blog-popular__inner-all
+                md-button.bk-section-blog-popular__post-all.md-raised.md-accent(data-ng-href="#" md-no-ink) Все посты

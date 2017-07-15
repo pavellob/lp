@@ -1,0 +1,22 @@
+.bk-section {
+    padding: 72px 0;
+
+    &--indent_no {
+        padding: 0;
+    }
+    &--indent_bottom {
+        padding: 0 0 72px;
+    }
+    
+    &--background_dark-grey {
+        background-color: #202020;
+        color: rgba(255, 255, 255, 0.87);
+
+        .bk-unit-title {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+    &--background_light-grey {
+        background-color: #f2f2f2;
+    }
+}

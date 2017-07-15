@@ -1,0 +1,8 @@
+mixin section-feature(data)
+    div.bk-section.bk-section-feature&attributes(attributes)
+        div.bk-section-feature__photo
+            img.bk-section-feature__image&attributes(data.image)
+        div.bk-section-feature__info
+            +unit-title--h2(data.title)&attributes({class:['bk-section-feature__title']})
+            div.bk-section-feature__text
+                != data.text

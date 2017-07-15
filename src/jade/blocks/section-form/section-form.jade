@@ -1,0 +1,9 @@
+mixin section-form(data)
+    div.bk-section.bk-section-form&attributes(attributes)
+        div.bk-container.bk-container--column
+            div.bk-section-form__inner
+                +unit-title--h2(data.title)&attributes({class:['bk-section-form__title']})
+                +unit-feedback({
+                    type: data.type,
+                    note: 'testNote'
+                })&attributes({class:['bk-section-form__feedback']})

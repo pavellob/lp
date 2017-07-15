@@ -1,0 +1,222 @@
+.bk-dialog {
+    position: relative;
+
+    &--size_middle {
+        max-width: 840px;
+    }
+
+    &__content {
+        padding: 32px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        transition: color 0s ease-out;
+        cursor: pointer;
+
+        &:hover {
+            color: #ff7100;
+            transition-duration: 0.3s;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 40px;
+        color: #000;
+        font-weight: 700;
+    }
+
+    &__title-price {
+        margin-top: 8px;
+        display: block;
+        color: #ff7100;
+        font-weight: 400;
+
+        @media only screen and (min-width : $layout-breakpoint-sm) {
+            margin-top: 0;
+            margin-left: 16px;
+            display: inline-block;
+        }
+    }
+
+    &__text {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(0,0,0,0.54);
+    }
+
+    &__feedback {
+        margin-top: 32px;
+    }
+
+    &__feedback--callback,
+    &__feedback--testdrive,
+    &__feedback--fastorder {
+        .bk-unit-feedback__inner,
+        .bk-unit-feedback__row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .bk-unit-feedback__field {
+            width: 100%;
+
+            @media only screen and (min-width : $layout-breakpoint-sm) {
+                width: auto;
+                flex-grow: 1;
+                flex-shrink: 0;
+
+                &:not(:first-child) {
+                    margin-left: 24px;
+                }
+            }
+        }
+
+        .bk-unit-feedback__action {
+            width: 100%;
+            margin: 0 0 0 -8px;
+        }
+    }
+
+    &__feedback--fastorder {
+        margin-top: 0;
+
+        .bk-unit-feedback__inner {
+            flex-direction: column;
+        }
+    }
+
+    &__config {
+        margin-top: 40px;
+    }
+    &__config-title {
+        font-size: 20px;
+        line-height: 1;
+    }
+    &__config-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+    &__config-item {
+        min-width: 194px;
+        padding-right: 24px;
+        display: flex;
+        margin-top: 16px;
+        flex-direction: row;
+    }
+    &__config-item-icon {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 1px solid #ff7100;
+        padding: 8px;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__config-item-info {
+        margin-left: 16px;
+        flex-shrink: 1;
+        flex-grow: 1;
+        align-self: center;
+    }
+    &__config-item-name {
+        font-size: 16px;
+        line-height: 1;
+    }
+    &__config-item-value {
+        font-size: 13px;
+        line-height: 1;
+        margin-top: 4px;
+        color: rgba(0,0,0,0.54);
+    }
+
+    &__feature {
+        margin-top: 40px;
+    }
+    &__feature-title {
+        font-size: 20px;
+        line-height: 1;
+    }
+    &__feature-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+    &__feature-item {
+        max-width: 258px;
+        padding-right: 24px;
+        display: flex;
+        margin-top: 16px;
+        flex-direction: row;
+    }
+    &__feature-item-icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__feature-item-value {
+        margin-left: 16px;
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    &__action {
+        margin-top: 40px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: -4px;
+    }
+    &__action-btn.md-accent.md-raised {
+        background-color: transparent;
+        font-size: 16px;
+        border: 2px solid #ff7100;
+        box-shadow: none;
+        color: #ff7100;
+
+        &:not(:first-child) {
+            margin-left: 16px;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+
+        &:focus,
+        &:active {
+            outline: none;
+            box-shadow: none;
+            color: #fff;
+        }
+    }
+    &__action-btn--border_no.md-accent.md-raised {
+        border-color: transparent;
+    }
+}

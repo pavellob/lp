@@ -1,0 +1,33 @@
+extends ../../layouts/angular.jade
+
+block content
+    md-dialog.bk-dialog.bk-dialog--size_middle
+        i.bk-dialog__close.material-icons(data-ng-click="closeDialog()") &#xE5CD;
+        md-dialog-content.bk-dialog__content
+            div.bk-dialog__title
+                | {{bike.name}}
+                span.bk-dialog__title-price
+                    | {{bike.price | bkCurrency}}
+            div.bk-dialog__text(data-ng-bind='bike.descriptionFull')
+            div.bk-dialog__config
+                div.bk-dialog__config-title Конфигурация
+                div.bk-dialog__config-list
+                    div.bk-dialog__config-item(data-ng-repeat='item in bike.config')
+                        div.bk-dialog__config-item-icon
+                            img(src='{{item.icon}}')
+                        div.bk-dialog__config-item-info
+                            div.bk-dialog__config-item-name(data-ng-bind='item.name')
+                            div.bk-dialog__config-item-value(data-ng-bind='item.value')
+            div.bk-dialog__feature
+                div.bk-dialog__feature-title Преимущества
+                div.bk-dialog__feature-list
+                    div.bk-dialog__feature-item(data-ng-repeat='feature in bike.features')
+                        div.bk-dialog__feature-item-icon
+                            img(src='{{feature.icon}}')
+                        div.bk-dialog__feature-item-value(data-ng-bind='feature.value')
+
+            div.bk-dialog__action(data-ng-controller="DialogOrderBikeCtrl")
+                md-button.bk-dialog__action-btn.md-raised.md-accent(data-ng-click="order($event)")
+                    | Заказать
+                md-button.bk-dialog__action-btn.bk-dialog__action-btn--border_no.md-raised.md-accent(data-ng-click="customize()")
+                    | Кастомизировать
